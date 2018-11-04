@@ -64,6 +64,17 @@ Refer to the following table for attribute details.
 | sustain    | Envelope Generator (Sustain) | 0.0 - 1.0 (1.0  by default)                                                                              |
 | release    | Envelope Generator (Release) | 0.0 - 1.0 (1.0  by default)                                                                              |
   
+## Setup
+
+```bash
+$ git clone git@github.com:Korilakkuma/x-piano.git
+$ cd x-piano
+$ npm install
+$ npm run build
+$ npm run docker-compose:build
+$ npm start
+```
+
 ## License
   
 Copyright (c) 2014 - 2018 Tomohiro IKEDA (Korilakkuma)  
