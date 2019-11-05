@@ -2,7 +2,9 @@ version: '3'
 services:
   webserver:
     build: .
-    container_name: nginx
+    container_name: x-piano
     tty: true
     ports:
       - 3000:80
+    volumes:
+      - .:/usr/share/nginx/html
