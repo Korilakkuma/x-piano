@@ -5,10 +5,10 @@
   "main": "build/app.js",
   "scripts": {
     "lint": "eslint src",
-    "build": "webpack --mode production",
-    "build:watch": "webpack --watch --mode development",
-    "docker-compose:build": "docker-compose build",
-    "start": "docker-compose up -d",
+    "fix": "eslint --fix src",
+    "build": "webpack --progress --mode production",
+    "build:watch": "webpack --progress --watch --mode development",
+    "start": "docker-compose up -d --build",
     "stop": "docker stop nginx"
   },
   "repository": {
@@ -32,16 +32,21 @@
   },
   "homepage": "https://korilakkuma.github.io/x-piano/",
   "dependencies": {
-    "xsound": "^2.5.0"
+    "xsound": "^2.16.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
-    "eslint": "^5.6.1",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.6.0",
     "eslint-cli": "^1.1.1",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
