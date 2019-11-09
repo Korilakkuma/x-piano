@@ -1,6 +1,6 @@
 'use strict';
 
-import Piano from './Piano.js';
+import { Piano } from './Piano.js';
 
 X('oscillator').setup(true);
 
@@ -13,7 +13,7 @@ const oneshots = [
     'oneshots/F.wav',
     'oneshots/G.wav',
     'oneshots/A.wav',
-    'oneshots/B.wav',
+    'oneshots/B.wav'
 ];
 
 const getBufferIndex = pianoIndex => {

@@ -1,6 +1,6 @@
 'use strict';
 
-export default class Piano extends HTMLElement {
+export class Piano extends HTMLElement {
     static get observedAttributes() {
         return [
             'ui-only',
