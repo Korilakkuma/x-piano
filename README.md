@@ -28,7 +28,7 @@ $ npm install --save x-piano
 The &lt;x-piano&gt; requires 3 scripts.
   
 ```HTML
-<script type="text/javascript" src="https://cdn.rawgit.com/Korilakkuma/XSound/master/build/xsound.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>
 <script type="module" src="src/components/index.js"></script>
 <script defer nomodule src="build/app.js"></script>
 ```
@@ -71,7 +71,6 @@ $ git clone git@github.com:Korilakkuma/x-piano.git
 $ cd x-piano
 $ npm install
 $ npm run build
-$ npm run docker-compose:build
 $ npm start
 ```
 
