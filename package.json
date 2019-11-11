@@ -1,6 +1,6 @@
 {
   "name": "x-piano",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Piano illust with Web Components",
   "main": "build/app.js",
   "scripts": {
