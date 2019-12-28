@@ -2,7 +2,8 @@ module.exports = {
   entry: './src/components/index.js',
   output: {
     filename: 'app.js',
-    path: `${__dirname}/build`
+    path: `${__dirname}/build`,
+    publicPath: '/build/'
   },
   module: {
     rules: [
@@ -12,5 +13,8 @@ module.exports = {
         use: 'babel-loader'
       }
     ]
+  },
+  devServer: {
+    contentBase: __dirname
   }
 };

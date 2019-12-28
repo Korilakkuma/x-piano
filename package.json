@@ -8,8 +8,7 @@
     "fix": "eslint --fix src",
     "build": "webpack --progress --mode production",
     "build:watch": "webpack --progress --watch --mode development",
-    "start": "docker-compose up -d --build",
-    "stop": "docker stop nginx"
+    "dev": "webpack-dev-server --progress"
   },
   "repository": {
     "type": "git",
@@ -47,6 +46,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
