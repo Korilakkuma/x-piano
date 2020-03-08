@@ -7,7 +7,6 @@
     "lint": "eslint src",
     "fix": "eslint --fix src",
     "build": "webpack --progress --mode production",
-    "build:watch": "webpack --progress --watch --mode development",
     "dev": "webpack-dev-server --progress"
   },
   "repository": {
