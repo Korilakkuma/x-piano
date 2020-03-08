@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   entry: './src/components/index.js',
   output: {
     filename: 'app.js',
