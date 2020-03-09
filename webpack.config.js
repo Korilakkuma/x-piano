@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   mode: 'development',
   entry: './src/components/index.js',
@@ -15,6 +17,11 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/components', to: '.' }
+    ])
+  ],
   devServer: {
     contentBase: __dirname
   }
