@@ -29,7 +29,7 @@ The &lt;x-piano&gt; requires 3 scripts.
   
 ```HTML
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>
-<script type="module" src="src/components/index.js"></script>
+<script type="module" src="build/index.js"></script>
 <script defer nomodule src="build/app.js"></script>
 ```
   
@@ -51,13 +51,13 @@ Refer to the following table for attribute details.
 ### Attributes
   
 |  Attribute | Description                  | Value                                                                                                    |
-|:-----------|:-----------------------------|:---------------------------------------------------------------------------------------                  |
+|:-----------|:-----------------------------|:---------------------------------------------------------------------------------------------------------|
 | loading    | Apply style for loading      | boolean attribute                                                                                        |
 | ui-only    | Not use sound                | boolean attribute                                                                                        |
 | type       | Sound Source                 | 'piano' (default), 'sine', 'square', 'sawtooth', 'triangle', 'whitenoise', 'pinknoise', 'brownniannoise' |
 | volume     | Master Volume                | 0.0 - 1.0 (1.0  by default)                                                                              |
 | octave     | Octave (Oscillator only      | number                                                                                                   |
-| transpose  | Transpose (One-Shot only)    | Greater than or equal to 0.0 (0.0 by default)                                                            |
+| transpose  | Transpose (One-Shot only)    | Greater than to 0.0 (1.0 by default)                                                                     |
 | glide      | Glide (Oscillator only)      | Greater than or equal to 0.0 (0.0 by default)                                                            |
 | attack     | Envelope Generator (Attack)  | 0.0 - 1.0 (0.01 by default)                                                                              |
 | decay      | Envelope Generator (Decay)   | 0.0 - 1.0 (0.3  by default)                                                                              |
@@ -71,7 +71,8 @@ $ git clone git@github.com:Korilakkuma/x-piano.git
 $ cd x-piano
 $ npm install
 $ npm run build
-$ npm start
+$ npm run dev
+$ open http://localhost:8080/
 ```
 
 ## License
