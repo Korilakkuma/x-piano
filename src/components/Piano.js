@@ -320,7 +320,7 @@ export class Piano extends HTMLElement {
                     <li role="button" data-index="27" aria-label="27"></li>
                     <li role="button" data-index="29" aria-label="29"></li>
                     <li role="button" data-index="31" aria-label="31"></li>
-                    <li role="button" data-index="33" aria-label="33"></li>
+                    <li role="button" data-index="32" aria-label="32"></li>
                     <li role="button" data-index="34" aria-label="34"></li>
                     <li role="button" data-index="36" aria-label="36"></li>
                     <li role="button" data-index="38" aria-label="38"></li>
