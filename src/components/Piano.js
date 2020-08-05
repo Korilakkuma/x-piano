@@ -30,7 +30,7 @@ export class Piano extends HTMLElement {
         this.render();
     }
 
-    onMouseDown(event) {
+    onDown(event) {
         event.currentTarget.classList.add('-on');
 
         this.isDown = true;
@@ -51,7 +51,7 @@ export class Piano extends HTMLElement {
         }
     }
 
-    onMouseUp(event) {
+    onUp(event) {
         event.currentTarget.classList.remove('-on');
 
         this.isDown = false;
@@ -71,7 +71,7 @@ export class Piano extends HTMLElement {
         }
     }
 
-    onMouseEnter(event) {
+    onEnter(event) {
         if (!this.isDown) {
             return;
         }
@@ -94,7 +94,7 @@ export class Piano extends HTMLElement {
         }
     }
 
-    onMouseLeave(event) {
+    onLeave(event) {
         if (!this.isDown) {
             return;
         }
@@ -141,23 +141,23 @@ export class Piano extends HTMLElement {
         this.render();
 
         for (const key of this.shadowRoot.querySelectorAll('[role="button"]')) {
-            key.addEventListener('mousedown',  this.onMouseDown.bind(this),  false);
-            key.addEventListener('mouseup',    this.onMouseUp.bind(this),    false);
-            key.addEventListener('mouseenter', this.onMouseEnter.bind(this), false);
-            key.addEventListener('mouseleave', this.onMouseLeave.bind(this), false);
-            key.addEventListener('touchstart', this.onMouseDown.bind(this),  false);
-            key.addEventListener('touchend',   this.onMouseUp.bind(this),    false);
+            key.addEventListener('mousedown',  this.onDown.bind(this),  false);
+            key.addEventListener('mouseup',    this.onUp.bind(this),    false);
+            key.addEventListener('mouseenter', this.onEnter.bind(this), false);
+            key.addEventListener('mouseleave', this.onLeave.bind(this), false);
+            key.addEventListener('touchstart', this.onDown.bind(this),  false);
+            key.addEventListener('touchend',   this.onUp.bind(this),    false);
         }
     }
 
     disconnectedCallback() {
         for (const key of this.shadowRoot.querySelectorAll('[role="button"]')) {
-            key.removeEventListener('mousedown',  this.onMouseDown.bind(this),  false);
-            key.removeEventListener('mouseup',    this.onMouseUp.bind(this),    false);
-            key.removeEventListener('mouseenter', this.onMouseEnter.bind(this), false);
-            key.removeEventListener('mouseleave', this.onMouseLeave.bind(this), false);
-            key.removeEventListener('touchstart', this.onMouseDown.bind(this),  false);
-            key.removeEventListener('touchend',   this.onMouseUp.bind(this),    false);
+            key.removeEventListener('mousedown',  this.onDown.bind(this),  false);
+            key.removeEventListener('mouseup',    this.onUp.bind(this),    false);
+            key.removeEventListener('mouseenter', this.onEnter.bind(this), false);
+            key.removeEventListener('mouseleave', this.onLeave.bind(this), false);
+            key.removeEventListener('touchstart', this.onDown.bind(this),  false);
+            key.removeEventListener('touchend',   this.onUp.bind(this),    false);
         }
     }
 
