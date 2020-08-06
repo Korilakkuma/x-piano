@@ -118,7 +118,7 @@
                 <dt><label for="range-octave">octave : <span id="output-octave">0</span></label></dt>
                 <dd><input type="range" id="range-octave" value="0" min="-4" max="4" step="1" /></dd>
                 <dt><label for="range-transpose">transpose : <span id="output-transpose">1</span></label></dt>
-                <dd><input type="range" id="range-transpose" value="1" min="0.05" max="4" step="0.05" /></dd>
+                <dd><input type="range" id="range-transpose" value="0" min="-6" max="6" step="1" /></dd>
                 <dt><label for="range-glide">glide : <span id="output-glide">0</span></label></dt>
                 <dd><input type="range" id="range-glide" value="0" min="0" max="1" step="0.05" /></dd>
             </dl>
@@ -178,10 +178,10 @@
             }, false);
 
             document.getElementById('range-transpose').addEventListener('input', event => {
-                const transpose = event.currentTarget.value;
+                const transpose = (event.currentTarget.valueAsNumber + 12) / 12;
 
                 xpiano.setAttribute('transpose', transpose);
-                document.getElementById('output-transpose').textContent = transpose;
+                document.getElementById('output-transpose').textContent = event.currentTarget.value;
             }, false);
 
             document.getElementById('range-glide').addEventListener('input', event => {
