@@ -18,9 +18,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: 'src/components', to: '.' }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/components', to: '.' }
+      ]
+    })
   ],
   devServer: {
     contentBase: __dirname
