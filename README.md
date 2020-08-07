@@ -76,6 +76,6 @@ $ open http://localhost:8080/
 
 ## License
   
-Copyright (c) 2014 - 2018 Tomohiro IKEDA (Korilakkuma)  
+Copyright (c) 2014 - 2020 Tomohiro IKEDA (Korilakkuma)  
 Released under the MIT license
   
