@@ -70,7 +70,6 @@ Refer to the following table for attribute details.
 $ git clone git@github.com:Korilakkuma/x-piano.git
 $ cd x-piano
 $ npm install
-$ npm run build
 $ npm run dev
 $ open http://localhost:8080/
 ```
