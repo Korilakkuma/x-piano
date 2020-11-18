@@ -38,22 +38,22 @@
     "README.md"
   ],
   "dependencies": {
-    "xsound": "^2.19.9"
+    "xsound": "^2.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^6.0.3",
-    "eslint": "^7.6.0",
+    "babel-loader": "^8.2.1",
+    "copy-webpack-plugin": "^6.3.2",
+    "eslint": "^7.13.0",
     "eslint-cli": "^1.1.1",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "webpack": "^4.44.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "webpack": "^5.6.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
