@@ -17,7 +17,7 @@ const oneshots = [
 ];
 
 const getBufferIndex = pianoIndex => {
-    switch (parseInt(((pianoIndex + 9) % 12), 10)) {
+    switch (Math.floor((pianoIndex + 9) % 12)) {
         case  0:
         case  1:
             return 0;
