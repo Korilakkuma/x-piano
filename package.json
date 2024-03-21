@@ -1,0 +1,62 @@
+{
+  "name": "x-piano",
+  "version": "2.0.0",
+  "engines": {
+    "node": ">=18.0.0 <=20.12.x"
+  },
+  "description": "Web Components for Web Audio API",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "eslint 'src/**/*.js' app.js jest.config.js webpack.config.js",
+    "fix": "eslint --fix 'src/**/*.js' app.js jest.config.js webpack.config.js",
+    "format:check": "prettier --check index.html 'src/**/*.js' app.js jest.config.js webpack.config.js",
+    "format": "prettier --write index.html 'src/**/*.js' app.js jest.config.js webpack.config.js",
+    "build": "npm run clean && webpack --progress",
+    "dev": "webpack-dev-server --progress",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:verbose": "jest --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write 'src/**/*.js'"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Korilakkuma/x-piano.git"
+  },
+  "keywords": [
+    "x-piano",
+    "Web Components",
+    "Web Audio API",
+    "XSound"
+  ],
+  "author": "Korilakkuma <rilakkuma.san.xjapan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Korilakkuma/x-piano/issues"
+  },
+  "homepage": "https://github.com/Korilakkuma/x-piano",
+  "devDependencies": {
+    "css-loader": "^7.0.0",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "eslint": "^9.0.0",
+    "husky": "4.3.8",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.2",
+    "mini-css-extract-plugin": "^2.8.1",
+    "prettier": "^3.2.5",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}
