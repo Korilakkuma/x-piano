@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>x-piano | Web Components</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #777;
+        background-color: #fafafa;
+      }
+
+      header {
+        margin-bottom: 48px;
+        padding: 32px 0;
+        text-align: center;
+        background-color: #000;
+      }
+
+      header > h1 {
+        font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
+        font-size: 2rem;
+        font-weight: lighter;
+        color: #c0c;
+      }
+
+      x-piano + section {
+        margin: 48px auto 0;
+        width: 1228px;
+      }
+
+      fieldset {
+        padding: 32px;
+      }
+
+      legend {
+        font-size: 22px;
+      }
+
+      dl {
+        color: #999;
+      }
+
+      dl dt {
+        margin: 8px 0;
+        font-size: 1.125rem;
+      }
+
+      dl dt:before {
+        content: "";
+        display: inline-block;
+        margin-right: 8px;
+        border-top: 10px solid rgba(0, 0, 0, 0);
+        border-bottom: 10px solid rgba(0, 0, 0, 0);
+        border-left: 15px solid #999;
+        vertical-align: -4px;
+      }
+
+      input,
+      label {
+        cursor: pointer;
+      }
+
+      [type="checkbox"] {
+        margin-right: 4px;
+      }
+
+      [type="radio"] {
+        margin: 0 4px;
+      }
+
+      footer {
+        margin: 48px 0 0;
+        padding: 48px 0;
+        color: #fafafa;
+        text-align: center;
+        background-color: #000;
+      }
+
+      small {
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Web Components &lt;x-piano&gt;</h1>
+    </header>
+    <x-piano type="sine" volume="1" attack="0.01" decay="0.3" sustain="1" release="1"></x-piano>
+    <section>
+      <fieldset>
+        <legend>Attribute Controller</legend>
+        <dl>
+          <dt>
+            <label><input type="checkbox" id="checkbox-ui-only" /> ui-only</label>
+          </dt>
+          <dd hidden>ui-only</dd>
+          <dt>type</dt>
+          <dd>
+            <form id="form-type">
+              <label><input type="radio" name="radio-type" value="sine" checked /> sine</label>
+              <label><input type="radio" name="radio-type" value="square" /> square</label>
+              <label><input type="radio" name="radio-type" value="sawtooth" /> sawtooth</label>
+              <label><input type="radio" name="radio-type" value="triangle" /> triangle</label>
+            </form>
+          </dd>
+          <dt>
+            <label for="range-volume">volume : <span id="output-volume">1</span></label>
+          </dt>
+          <dd><input type="range" id="range-volume" value="1" min="0" max="1" step="0.05" /></dd>
+          <dt>
+            <label for="range-octave">octave : <span id="output-octave">0</span></label>
+          </dt>
+          <dd><input type="range" id="range-octave" value="0" min="-4" max="4" step="1" /></dd>
+          <dt>
+            <label for="range-glide">glide : <span id="output-glide">0</span></label>
+          </dt>
+          <dd><input type="range" id="range-glide" value="0" min="0" max="1" step="0.05" /></dd>
+        </dl>
+        <dl>
+          <dt>
+            <label for="range-attack">attack : <span id="output-attack">0.01</span></label>
+          </dt>
+          <dd><input type="range" id="range-attack" value="0.01" min="0" max="1" step="0.01" /></dd>
+          <dt>
+            <label for="range-decay">decay : <span id="output-decay">0.3</span></label>
+          </dt>
+          <dd><input type="range" id="range-decay" value="0.3" min="0" max="1" step="0.01" /></dd>
+          <dt>
+            <label for="range-sustain">sustain : <span id="output-sustain">1</span></label>
+          </dt>
+          <dd><input type="range" id="range-sustain" value="1" min="0" max="1" step="0.01" /></dd>
+          <dt>
+            <label for="range-release">release : <span id="output-release">1</span></label>
+          </dt>
+          <dd><input type="range" id="range-release" value="1" min="0" max="1" step="0.01" /></dd>
+        </dl>
+      </fieldset>
+    </section>
+    <footer>
+      <small>Copyright 2024 (c) Tomohiro IKEDA</small>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/xsound@latest/build/xsound.min.js"></script>
+    <script type="module" src="src/index.js"></script>
+    <script nomodule src="dist/x-piano.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
