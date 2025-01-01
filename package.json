@@ -2,7 +2,7 @@
   "name": "x-piano",
   "version": "2.0.0",
   "engines": {
-    "node": ">=18.0.0 <=20.12.x"
+    "node": ">=20.0.0 <=22.14.x"
   },
   "description": "Web Components for Web Audio API",
   "scripts": {
