@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
     '^/src/(.*)$': '<rootDir>/src/$1'

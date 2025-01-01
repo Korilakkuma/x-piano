@@ -1,9 +1,9 @@
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
+import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
+import path from 'node:path';
 
 const dirname = path.resolve('.');
 
-module.exports = {
+export default {
   mode: 'development',
   entry: {
     'x-piano': ['./src/index.js']

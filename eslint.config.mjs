@@ -1,13 +1,19 @@
-module.exports = [
+import eslint from '@eslint/js';
+import { FlatCompat } from '@eslint/eslintrc';
+
+const compat = new FlatCompat();
+
+export default [
+  eslint.configs.recommended,
   {
-    'files': ['src/**/*.js', 'jest.config.js', 'webpack.config.js'],
-    'languageOptions': {
+    files: ['src/**/*.js', 'jest.config.mjs', 'webpack.config.mjs'],
+    languageOptions: {
       'globals': {
         'XSound': 'readonly',
         'X': 'readonly'
       }
     },
-    'rules': {
+    rules: {
       'default-param-last': 'off',
       'indent': [
         'error',
