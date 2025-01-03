@@ -7,7 +7,7 @@ const compat = new FlatCompat();
 export default [
   eslint.configs.recommended,
   {
-    files: ['src/**/*.js', 'jest.config.mjs', 'webpack.config.mjs'],
+    files: ['src/**/*.js', 'app.js', 'jest.config.mjs', 'webpack.config.mjs'],
     languageOptions: {
       'ecmaVersion': 'latest',
       'sourceType': 'module',
