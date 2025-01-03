@@ -1,5 +1,6 @@
 import eslint from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import globals from 'globals';
 
 const compat = new FlatCompat();
 
@@ -8,7 +9,12 @@ export default [
   {
     files: ['src/**/*.js', 'jest.config.mjs', 'webpack.config.mjs'],
     languageOptions: {
+      'ecmaVersion': 'latest',
+      'sourceType': 'module',
       'globals': {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.jest,
         'XSound': 'readonly',
         'X': 'readonly'
       }
