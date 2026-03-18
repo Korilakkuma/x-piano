@@ -7,10 +7,14 @@
   "description": "Web Components for Web Audio API",
   "scripts": {
     "clean": "rm -rf dist",
-    "lint": "eslint 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
-    "fix": "eslint --fix 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
-    "format:check": "prettier --check index.html 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
-    "format": "prettier --write index.html 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
+    "lint:js": "eslint 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
+    "fix:js": "eslint --fix 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
+    "lint:css": "stylelint app.css",
+    "fix:css": "stylelint --fix app.css",
+    "lint": "run-p lint:js lint:css",
+    "fix": "run-p fix:js fix:css",
+    "format:check": "prettier --check index.html 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs app.css",
+    "format": "prettier --write index.html 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs app.css",
     "build": "npm run clean && webpack --progress",
     "dev": "webpack-dev-server --progress",
     "test": "jest",
@@ -26,6 +30,10 @@
     "src/**/*.js": [
       "eslint --fix",
       "prettier --write 'src/**/*.js'"
+    ],
+    "app.css": [
+      "stylelint --fix",
+      "prettier --write app.css"
     ]
   },
   "repository": {
@@ -56,7 +64,11 @@
     "jest-environment-jsdom": "^30.2.0",
     "lint-staged": "^16.3.1",
     "mini-css-extract-plugin": "^2.10.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.8.1",
+    "stylelint": "^17.5.0",
+    "stylelint-config-recess-order": "^7.7.0",
+    "stylelint-config-standard": "^40.0.0",
     "terser-webpack-plugin": "^5.3.16",
     "webpack": "^5.105.3",
     "webpack-cli": "^6.0.1",

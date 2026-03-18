@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
@@ -14,22 +14,22 @@ body {
 }
 
 header {
-  margin-bottom: 48px;
   padding: 32px 0;
+  margin-bottom: 48px;
   text-align: center;
   background-color: #000;
 }
 
 header > h1 {
-  font-family: "Lucida Grande", "Calibri", Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande", Calibri, Helvetica, Arial, sans-serif;
   font-size: 2rem;
   font-weight: lighter;
   color: #c0c;
 }
 
 x-piano + section {
-  margin: 48px auto 0;
   width: 1228px;
+  margin: 48px auto 0;
 }
 
 fieldset {
@@ -49,14 +49,14 @@ dl dt {
   font-size: 1.125rem;
 }
 
-dl dt:before {
-  content: "";
+dl dt::before {
   display: inline-block;
   margin-right: 8px;
-  border-top: 10px solid rgba(0, 0, 0, 0);
-  border-bottom: 10px solid rgba(0, 0, 0, 0);
-  border-left: 15px solid #999;
   vertical-align: -4px;
+  content: "";
+  border-top: 10px solid rgb(0 0 0 / 0%);
+  border-bottom: 10px solid rgb(0 0 0 / 0%);
+  border-left: 15px solid #999;
 }
 
 input,
@@ -73,8 +73,8 @@ label {
 }
 
 footer {
-  margin: 48px 0 0;
   padding: 48px 0;
+  margin: 48px 0 0;
   color: #fafafa;
   text-align: center;
   background-color: #000;
