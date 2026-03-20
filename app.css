@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Myriad Pro", Calibri, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #777;
+  background-color: #fafafa;
+}
+
+header {
+  padding: 32px 0;
+  margin-bottom: 48px;
+  text-align: center;
+  background-color: #000;
+}
+
+header > h1 {
+  font-family: "Lucida Grande", Calibri, Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: lighter;
+  color: #c0c;
+}
+
+x-piano + section {
+  width: 1228px;
+  margin: 48px auto 0;
+}
+
+fieldset {
+  padding: 32px;
+}
+
+legend {
+  font-size: 22px;
+}
+
+dl {
+  color: #999;
+}
+
+dl dt {
+  margin: 8px 0;
+  font-size: 1.125rem;
+}
+
+dl dt::before {
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: -4px;
+  content: "";
+  border-top: 10px solid rgb(0 0 0 / 0%);
+  border-bottom: 10px solid rgb(0 0 0 / 0%);
+  border-left: 15px solid #999;
+}
+
+input,
+label {
+  cursor: pointer;
+}
+
+[type="checkbox"] {
+  margin-right: 4px;
+}
+
+[type="radio"] {
+  margin: 0 4px;
+}
+
+footer {
+  padding: 48px 0;
+  margin: 48px 0 0;
+  color: #fafafa;
+  text-align: center;
+  background-color: #000;
+}
+
+small {
+  font-size: 0.875rem;
+}

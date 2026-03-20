@@ -12,11 +12,11 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/XPiano.js":
+/***/ "./src/XPiano.js"
 /*!***********************!*\
   !*** ./src/XPiano.js ***!
   \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -34,6 +34,11 @@ class XPiano extends HTMLElement {
     this.state = state;
     this.isDown = false;
 
+    this.onDown = this.onDown.bind(this);
+    this.onUp = this.onUp.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
+
     this.attachShadow({ mode: 'open' });
     this.render();
   }
@@ -44,23 +49,23 @@ class XPiano extends HTMLElement {
     this.setAttributes();
 
     for (const button of this.shadowRoot.querySelectorAll('button[type="button"]')) {
-      button.addEventListener('mousedown', this.onDown.bind(this), false);
-      button.addEventListener('mouseup', this.onUp.bind(this), false);
-      button.addEventListener('mouseenter', this.onEnter.bind(this), false);
-      button.addEventListener('mouseleave', this.onLeave.bind(this), false);
-      button.addEventListener('touchstart', this.onDown.bind(this), false);
-      button.addEventListener('touchend', this.onUp.bind(this), false);
+      button.addEventListener('mousedown', this.onDown);
+      button.addEventListener('mouseup', this.onUp);
+      button.addEventListener('mouseenter', this.onEnter);
+      button.addEventListener('mouseleave', this.onLeave);
+      button.addEventListener('touchstart', this.onDown);
+      button.addEventListener('touchend', this.onUp);
     }
   }
 
   disconnectedCallback() {
     for (const button of this.shadowRoot.querySelectorAll('button[type="button"]')) {
-      button.removeEventListener('mousedown', this.onDown.bind(this), false);
-      button.removeEventListener('mouseup', this.onUp.bind(this), false);
-      button.removeEventListener('mouseenter', this.onEnter.bind(this), false);
-      button.removeEventListener('mouseleave', this.onLeave.bind(this), false);
-      button.removeEventListener('touchstart', this.onDown.bind(this), false);
-      button.removeEventListener('touchend', this.onUp.bind(this), false);
+      button.removeEventListener('mousedown', this.onDown);
+      button.removeEventListener('mouseup', this.onUp);
+      button.removeEventListener('mouseenter', this.onEnter);
+      button.removeEventListener('mouseleave', this.onLeave);
+      button.removeEventListener('touchstart', this.onDown);
+      button.removeEventListener('touchend', this.onUp);
     }
   }
 
@@ -202,7 +207,7 @@ class XPiano extends HTMLElement {
 
     const release = Number(this.getAttribute('release'));
 
-    if (sustain >= 0 && sustain <= 1) {
+    if (release >= 0 && release <= 1) {
       X('oscillator').module('envelopegenerator').param({ release });
     }
   }
@@ -401,7 +406,7 @@ class XPiano extends HTMLElement {
 }
 
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -423,6 +428,12 @@ class XPiano extends HTMLElement {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -460,7 +471,7 @@ class XPiano extends HTMLElement {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 /*!**********************!*\
   !*** ./src/index.js ***!
