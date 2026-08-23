@@ -5,6 +5,11 @@
     "node": ">=22.0.0 <=24.18.x"
   },
   "description": "Web Components for Web Audio API",
+  "allowScripts": {
+    "fsevents": true,
+    "husky": true,
+    "unrs-resolver": true
+  },
   "scripts": {
     "clean": "rm -rf dist",
     "lint:js": "eslint 'src/**/*.js' app.js jest.config.mjs webpack.config.mjs",
