@@ -8,7 +8,8 @@
   "allowScripts": {
     "fsevents": true,
     "husky": true,
-    "unrs-resolver": true
+    "unrs-resolver": true,
+    "@parcel/watcher": true
   },
   "scripts": {
     "clean": "rm -rf dist",
